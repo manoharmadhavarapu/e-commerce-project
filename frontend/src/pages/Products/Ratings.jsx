@@ -1,6 +1,6 @@
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 
-const Ratings = ({value, text, color}) => {
+const Ratings = ({value, text, color='yellow-500'}) => {
 
     const fullStars = Math.floor(value); // 4--> 4 // 4.4--> 4 // 4.6---> 4
     const halfStars = value - fullStars > 0.5 ? 1 : 0; // 4 - 4 === false === 0 //  4.4 - 4 === false === 0 // 4.6 - 4 === true ===1
@@ -28,8 +28,8 @@ const Ratings = ({value, text, color}) => {
   )
 }
 
-Ratings.defaultProps = {
-    color: 'yellow-500'
-}
+// Ratings.defaultProps = {
+//     color: 'yellow-500'
+// }
 
 export default Ratings

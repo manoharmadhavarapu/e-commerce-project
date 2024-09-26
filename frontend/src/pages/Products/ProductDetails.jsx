@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { toast } from "react-toastify"
 import { useGetProductDetailsQuery, useCreateReviewMutation } from '../../redux/api/productApiSlice';
@@ -10,16 +10,19 @@ import HeartIcon from "./HeartIcon";
 import Message from "../../components/Message";
 import Ratings from "./Ratings";
 import ProductTabs from "./ProductTabs";
+import { addToCart } from "../../redux/features/cart/cartSlice";
 
 const ProductDetails = () => {
     const { id: productId } = useParams();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [qty, setQty] = useState(1);
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState("");
 
     const { data: product, isLoading, error, refetch } = useGetProductDetailsQuery(productId);
+    console.log('first',product)
 
     const { userInfo } = useSelector(state => state.auth);
 
@@ -39,6 +42,11 @@ const ProductDetails = () => {
         } catch (error) {
             toast.error(error?.data || error.message)
         }
+    }
+
+    const addToCartHandler = () => {
+        dispatch(addToCart({...product, qty}));
+        navigate('/cart')
     }
 
     return (
@@ -113,9 +121,9 @@ const ProductDetails = () => {
 
                                 <div className="btn-container">
                                     <button 
-                                        // onClick={addToCartHandler} 
-                                        disabled={product.countInStock !== 0}
-                                        className="bg-pink-600 text-white py-2 px-4 rounded-lg mt-4 md:mt-0 cursor-pointer"
+                                        onClick={addToCartHandler} 
+                                        disabled={product.countInStock === 0}
+                                        className="bg-pink-600 text-white disabled:cursor-not-allowed py-2 px-4 rounded-lg mt-4 md:mt-0 cursor-pointer"
                                     > Add To Cart</button>
                                 </div>
                             </div>

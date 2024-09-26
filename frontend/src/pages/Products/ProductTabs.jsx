@@ -63,7 +63,7 @@ const ProductTabs = ({ loadingProductReview, userInfo, submitHandler, rating, se
                                         </div>
 
                                         <div className="my-2">
-                                            <lable htmlFor='comment' className="block text-xl mb-2">Comment</lable>
+                                            <label htmlFor='comment' className="block text-xl mb-2">Comment</label>
                                             <textarea id="comment" rows={'3'}
                                                 required
                                                 value={comment}
