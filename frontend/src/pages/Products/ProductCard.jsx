@@ -8,15 +8,12 @@ import HeartIcon from './HeartIcon'
 const ProductCard = ({ p }) => {
 
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const addToCartHandler = (product, qty) => {
         dispatch(addToCart({...product, qty}));
-        // toast.success("Item added successfully", {
-        //     position: toast.POSITION.TOP_RIGHT,
-        //     autoClose: 2000,
-        // })
-        navigate('/cart')
+        toast.success("Item added successfully to cart")
+        // navigate('/cart')
     }
 
     return (
