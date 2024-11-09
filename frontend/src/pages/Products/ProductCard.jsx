@@ -17,7 +17,7 @@ const ProductCard = ({ p }) => {
     }
 
     return (
-        <div className='relative max-w-sm  bg-[#1A1A1A] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
+        <div className='relative w-[280px]  bg-[#1A1A1A] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
             <section className='relative'>
                 <Link to={`/product/${p._id}`}>
                     <span className='absolute bottom-3 right-3 bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300'>
@@ -25,7 +25,7 @@ const ProductCard = ({ p }) => {
                     </span>
 
                     <img
-                        style={{ height: "170px", objectFit: "fill" }}
+                        style={{ height: "170px", width:'100%', objectFit: "fill" }}
                         className='cursor-pointer w-[16rem]'
                         src={p.image}
                         alt={p.name}
@@ -35,7 +35,7 @@ const ProductCard = ({ p }) => {
                 <HeartIcon product={p} />
             </section>
 
-            <div className="p-5">
+            <div className="p-5 overflow-x-hidden">
                 <div className="flex items-center justify-between">
                     <h5 className='mb-2 text-lg text-white dark:text-white'>{p?.name}</h5>
                     <p className='font-semibold text-pink-500'>{p?.price?.toLocaleString('en-IN', {
@@ -44,8 +44,8 @@ const ProductCard = ({ p }) => {
                     })}</p>
                 </div>
 
-                <p className="mb-3 font-normal text-[#CFCFCF]">
-                    {p?.description?.substring(0, 60)}...
+                <p className="mb-3 font-normal text-[#CFCFCF] w-[280px]">
+                    {p.description.length >= 30 ? p?.description?.substring(0, 30) + "..." : p.description}
                 </p>
 
                 <section className='flex items-center justify-between'>

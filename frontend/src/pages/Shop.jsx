@@ -140,7 +140,7 @@ const Shop = () => {
 
                     <div className="p-3">
                         <h2 className="h-4 text-center mb-2">{products.length} Products</h2>
-                        <div className="flex flex-wrap">
+                        <div className="flex flex-wrap md:justify-center md:items-center">
                             {
                                 products.length === 0 ? (
                                     <Loader/>

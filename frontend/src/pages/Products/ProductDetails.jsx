@@ -62,37 +62,37 @@ const ProductDetails = () => {
                     {error?.data?.message || error.message}
                 </Message>) : (
                     <>
-                        <div className="flex justify-between flex-wrap relative mt-[2rem] ml-[10rem]">
+                        <div className="flex flex-col justify-center items-center relative mt-[2rem]">
                             <div>
-                                <img src={product.image} alt={product.name} className="w-full xl:w-[45rem] lg:w-[40rem] md:[30rem] sm:w-[20rem] mr-[2rem]" />
+                                <img src={product.image} alt={product.name} className="w-[90%] mx-auto xl:w-[45rem] lg:w-[40rem] md:w-[30rem] sm:w-[20rem]" />
                                 <HeartIcon product={product} />
                             </div>
 
-                            <div className="flex flex-col justify-between">
-                                <h2 className="text-2xl font-semibold">{product.name}</h2>
-                                <p className="my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0] ">{product.description}</p>
-                                <p className="text-3xl my-4 font-extrabold ">₹ {product.price}</p>
+                            <div className="flex flex-col justify-between ">
+                                <h2 className="mt-3 text-base sm:text-2xl font-semibold">{product.name}</h2>
+                                <p className="my-2 sm:my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0] ">{product.description}</p>
+                                <p className="text-base sm:text-3xl my-2 sm:my-4 font-extrabold ">₹ {product.price}</p>
                                 <div className="flex items-center justify-between w-[20rem]">
                                     <div className="one">
-                                        <h1 className="flex items-center mb-6">
+                                        <h1 className="flex items-center mb-3 sm:mb-6">
                                             <FaStore className="mr-2 text-white" /> Brand: {" "} {product.brand}
                                         </h1>
-                                        <h1 className="flex items-center mb-6">
+                                        <h1 className="flex items-center mb-3 sm:mb-6">
                                             <FaClock className="mr-2 text-white" /> Added: {" "} {moment(product.createdAt).fromNow()}
                                         </h1>
-                                        <h1 className="flex items-center mb-6">
+                                        <h1 className="flex items-center mb-3 sm:mb-6">
                                             <FaStar className="mr-2 text-white" /> Reviews: {" "} {product.numReviews}
                                         </h1>
                                     </div>
 
                                     <div className="two">
-                                        <h1 className="flex items-center mb-6">
+                                        <h1 className="flex items-center mb-3 sm:mb-6">
                                             <FaStar className="mr-2 text-white" /> Ratings: {" "} {product.rating}
                                         </h1>
-                                        <h1 className="flex items-center mb-6">
+                                        <h1 className="flex items-center mb-3 sm:mb-6">
                                             <FaShoppingCart className="mr-2 text-white" /> Quantity: {" "} {product.quantity}
                                         </h1>
-                                        <h1 className="flex items-center mb-6">
+                                        <h1 className="flex items-center mb-3 sm:mb-6">
                                             <FaBox className="mr-2 text-white" /> In Stock: {" "} {product.countInStock}
                                         </h1>
                                     </div>
@@ -105,7 +105,7 @@ const ProductDetails = () => {
                                     {
                                         product.countInStock > 0 && (
                                             <div>
-                                                <select value={qty} onChange={e=>setQty(e.target.value)} className="p-2 w-[6rem] rounded-lg text-black">
+                                                <select value={qty} onChange={e=>setQty(e.target.value)} className="p-1 sm:p-2 w-[6rem] rounded-lg text-black">
                                                     {
                                                         [...Array(product.countInStock).keys()].map((num)=>(
                                                             <option key={num+1} value={num + 1}>
@@ -123,7 +123,7 @@ const ProductDetails = () => {
                                     <button 
                                         onClick={addToCartHandler} 
                                         disabled={product.countInStock === 0}
-                                        className="bg-pink-600 text-white disabled:cursor-not-allowed py-2 px-4 rounded-lg mt-4 md:mt-0 cursor-pointer"
+                                        className="bg-pink-600 text-white disabled:cursor-not-allowed py-1 px-2 sm:py-2 sm:px-4 rounded-lg mt-4 md:mt-0 cursor-pointer"
                                     > Add To Cart</button>
                                 </div>
                             </div>

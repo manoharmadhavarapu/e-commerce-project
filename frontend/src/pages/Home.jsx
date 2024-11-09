@@ -21,12 +21,12 @@ const Home = () => {
                     </Message>
                 ) : (
                     <>
-                        <div className='flex justify-between items-center'>
-                            <h1 className='ml-[20rem] mt-[10rem] text-[2rem]'>
+                        <div className='flex flex-col md:flex-row justify-between items-center'>
+                            <h1 className='md:ml-[20rem] md:mt-[10rem] text-xl md:text-[2rem]'>
                                 Special Products
                             </h1>
 
-                            <Link to={'/shop'} className='bg-pink-600 font-bold rounded-full py-2 px-10 mr-[20rem] mt-[10rem]'>
+                            <Link to={'/shop'} className='bg-pink-600 font-bold rounded-full py-2 px-10 md:mr-[20rem] md:mt-[10rem]'>
                                 Shop
                             </Link>
                         </div>

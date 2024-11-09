@@ -17,24 +17,24 @@ const AllProducts = () => {
     }
 
     return (
-        <div className='container mx-[9rem]'>
-            <div className="flex flex-col md:flex-row">
+        <div className='container'>
+            <div className="flex flex-col">
                 <div className="p-3">
-                    <div className='ml-[2rem] text-xl font-bold h-12'>
+                    <div className='text-xl font-bold h-12'>
                         All Products ({products.length})
                     </div>
 
-                    <div className="flex flex-wrap justify-around items-center">
+                    <div className="w-[50%] mx-auto md:flex flex-wrap justify-around items-center">
                         {
                             products?.map((product) => (
                                 <Link key={product._id} to={`/admin/product/update/${product._id}`} className='block mb-4 overflow-hidden'>
-                                    <div className="flex">
+                                    <div className="block sm:flex">
 
                                         <img src={product.image} alt={product.name} className='w-[10rem] object-cover' />
 
-                                        <div className="p-4 flex flex-col justify-around">
+                                        <div className="p-4 sm:flex flex-col justify-around">
 
-                                            <div className="flex justify-between">
+                                            <div className="sm:flex justify-between">
                                                 <h5 className="text-xl font-semibold mb-2">
                                                     {product?.name}
                                                 </h5>
@@ -48,7 +48,7 @@ const AllProducts = () => {
                                                 {product?.description?.substring(0, 160)}...
                                             </p>
 
-                                            <div className="flex justify-between">
+                                            <div className="sm:flex justify-between">
                                                 <Link to={`/admin/product/update/${product._id}`} className='inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-pink-700 rounded-lg hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800'>
                                                     Update Product
 

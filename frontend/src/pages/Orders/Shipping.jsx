@@ -40,7 +40,7 @@ const Shipping = () => {
             {/* ProgressSteps step1 step2... */}
             <ProgressSteps step1 step2/>
 
-            <div className="mt-[10rem] flex justify-around items-center flex-wrap">
+            <div className="mt-[4rem] flex justify-around items-center flex-wrap">
                 <form onSubmit={submitHandler} className="w-[40rem]">
                     <h1 className="text-2xl font-semibold mb-4">Shipping</h1>
 

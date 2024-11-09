@@ -68,14 +68,14 @@ const ProductTabs = ({ loadingProductReview, userInfo, submitHandler, rating, se
                                                 required
                                                 value={comment}
                                                 onChange={e => setComment(e.target.value)}
-                                                className="p-2 border rounded-lg xl:w-[40rem] text-black "
+                                                className="p-2 border rounded-lg w-full xl:w-[40rem] text-black "
                                             ></textarea>
                                         </div>
 
                                         <button type="submit" disabled={loadingProductReview} className="bg-pink-600 text-white py-2 px-4 rounded-lg">Submit</button>
                                     </form>
                                 ) : (
-                                    <p>Please <Link to={'/login'}>sign in</Link> to write a review</p>
+                                    <p>Please <Link to={'/login'} className="underline text-pink-500">sign in</Link> to write a review</p>
                                 )
                             }
                         </div>

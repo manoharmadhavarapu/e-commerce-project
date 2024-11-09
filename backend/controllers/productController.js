@@ -45,7 +45,7 @@ const addProduct = asyncHandler(async (req, res) => {
         res.json(product);
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(400).json(error.message)
     }
 })
@@ -94,7 +94,7 @@ const updateProductDetails = asyncHandler(async (req, res) => {
         res.json(product);
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(400).json(error.message);
     }
 })
@@ -132,7 +132,7 @@ const fetchProducts = asyncHandler(async (req, res) => {
         });
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(500).json(error.message)
     }
 })
@@ -153,7 +153,7 @@ const fetchProductById = asyncHandler(async (req, res) => {
         }
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(404).json({
             error: "Product not found"
         });
@@ -170,7 +170,7 @@ const fetchAllProducts = asyncHandler(async (req, res) => {
         res.json(products);
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(500).json({
             error: "Server Error"
         })
@@ -219,7 +219,7 @@ const addProductReview = asyncHandler(async (req, res) => {
         }
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(400).json(error.message)
     }
 })
@@ -232,7 +232,7 @@ const fetchTopProducts = asyncHandler(async (req, res) => {
         res.json(products);
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(400).json(error.message);
     }
 })
@@ -245,7 +245,7 @@ const fetchNewProducts = asyncHandler(async (req, res) => {
         res.json(products);
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(400).json(error.message);
     }
 })
@@ -256,7 +256,7 @@ const filterProducts = asyncHandler( async (req, res) => {
     try {
 
         const { checked, radio } = req.body;
-        console.log(req.body, 'req-body')
+        // console.log(req.body, 'req-body')
 
         let args = {};
         if(checked.length > 0 ) {
@@ -271,7 +271,7 @@ const filterProducts = asyncHandler( async (req, res) => {
         res.json(products);
         
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(500).json({
             error: "Server Error"
         })

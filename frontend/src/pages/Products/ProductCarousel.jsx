@@ -29,7 +29,7 @@ const ProductCarousel = () => {
                     {error?.data?.message || error.message}
                 </Message>
             ) : (
-                <Slider {...settings} className="xl:w-[45rem] lg:w-[43rem] md:w-[40rem] sm:w-[37rem] sm:block">
+                <Slider {...settings} className=" hidden xl:w-[45rem] lg:w-[43rem] md:w-[40rem] sm:w-[37rem]">
                     {
                         products.map(({image, _id, name, price, description, brand, createdAt, numReviews, rating, quantity, countInStock}) => (
                             <div key={_id}>

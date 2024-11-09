@@ -38,7 +38,7 @@ const createOrder = async (req, res) => {
         })
 
         const dbOrderItems = orderItems.map((itemFromClient) => {
-            console.log('itemFromClient', itemFromClient);
+            // console.log('itemFromClient', itemFromClient);
             const matchingItemFromDB = itemsFromDB.find((itemFromDB) => itemFromDB._id.toString() === itemFromClient._id);
 
             if (!matchingItemFromDB) {
@@ -53,7 +53,7 @@ const createOrder = async (req, res) => {
                 _id: undefined,
             };
         });
-        console.log('dbOrderItems', dbOrderItems)
+        // console.log('dbOrderItems', dbOrderItems)
 
         const { itemsPrice, taxPrice, shippingPrice, totalPrice } = calcPrices(dbOrderItems);
 

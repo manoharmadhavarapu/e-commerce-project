@@ -9,10 +9,12 @@ function App() {
   return (
     <>
       <ToastContainer />
-      <Navigation />
-      <main className='py-3'>
-        <Outlet />
-      </main>
+      <div className='flex w-full'>
+        <Navigation />
+        <main className='py-3 ml-[10%] w-[90%] sm:ml-[5%] sm:w-[95%]'>
+          <Outlet />
+        </main>
+      </div>
     </>
   )
 }

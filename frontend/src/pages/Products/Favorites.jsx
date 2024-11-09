@@ -6,12 +6,12 @@ const Favorites = () => {
     const favorites = useSelector(selectFavoriteProduct);
 
   return (
-    <div className="ml-[10rem]">
-        <h1 className="text-lg font-bold ml-[3rem] mt-[3rem]">
+    <div className="">
+        <h1 className=" text-center text-lg font-bold ml-[3rem] mt-[3rem]">
             FAVORITE PRODUCTS
         </h1>
 
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap justify-center">
             {
                 favorites && favorites.map((product)=>(
                     <Product key={product._id} product={product}/>

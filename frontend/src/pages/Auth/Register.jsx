@@ -49,11 +49,11 @@ const Register = () => {
     }
 
     return (
-        <section className="pl-[10rem] flex flex-wrap">
+        <section className="lg:pl-[10rem] flex flex-wrap justify-center items-center">
             <div className="mr-[4rem] mt-[5rem]">
                 <h1 className="text-2xl font-semibold mb-4">Register</h1>
 
-                <form onSubmit={submitHandler} className="container w-[40rem]">
+                <form onSubmit={submitHandler} className="container w-[14rem] sm:w-[32rem] md:w-[36rem] lg:w-[40rem]">
                     <div className="my-[2rem]">
                         <label htmlFor="name" className="block text-sm font-medium">Name</label>
                         <input type="text" id="name" className="mt-1 p-2 border rounded w-full" placeholder="Enter name" value={username} onChange={(e) => setUsername(e.target.value)} />
